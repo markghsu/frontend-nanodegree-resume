@@ -12,7 +12,7 @@ var bio = {
 	},
 	'welcomeMessage': 'Hello World!',
 	'skills':['php','javascript','C#','HTML','CSS'],
-	'bioPic':'images/me.jpg',
+	'biopic':'images/me.jpg',
 	'display': function f(){
 		$('#topContacts').prepend(HTMLemail.replace("%data%", this.contacts.email));
 		$('#topContacts').prepend(HTMLmobile.replace("%data%", this.contacts.mobile));
@@ -22,7 +22,7 @@ var bio = {
 		$('#header').prepend(HTMLheaderRole.replace("%data%", this.role));
 		$('#header').prepend(HTMLheaderName.replace("%data%", this.name));
 		$('#header').append(HTMLwelcomeMsg.replace("%data%", this.welcomeMessage));
-		$('#header').append(HTMLbioPic.replace("%data%", this.bioPic));
+		$('#header').append(HTMLbioPic.replace("%data%", this.biopic));
 		$('#header').append(HTMLskillsStart);
 		$.each(this.skills,function f(index,value){$('#skills').append(HTMLskills.replace("%data%", value));});
 		$('#footerContacts').append(HTMLemail.replace("%data%", this.contacts.email));
@@ -110,12 +110,6 @@ var work = {
 		});
 	}
 };
-
-function inName(str){
-	var arr = str.split(' ');
-	return arr[0][0].toUpperCase() + arr[0].slice(1).toLowerCase() + ' ' + arr[1].toUpperCase();
-}
-//$('#main').append(internationalizeButton)
 
 bio.display();
 work.display();
