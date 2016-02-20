@@ -14,22 +14,25 @@ var bio = {
 	'skills':['php','javascript','C#','HTML','CSS'],
 	'biopic':'images/me.jpg',
 	'display': function f(){
-		$('#topContacts').prepend(HTMLemail.replace("%data%", this.contacts.email));
-		$('#topContacts').prepend(HTMLmobile.replace("%data%", this.contacts.mobile));
-		$('#topContacts').prepend(HTMLgithub.replace("%data%", this.contacts.github));
-		$('#topContacts').prepend(HTMLtwitter.replace("%data%", this.contacts.twitter));
-		$('#topContacts').prepend(HTMLlocation.replace("%data%", this.contacts.location));
-		$('#header').prepend(HTMLheaderRole.replace("%data%", this.role));
-		$('#header').prepend(HTMLheaderName.replace("%data%", this.name));
-		$('#header').append(HTMLwelcomeMsg.replace("%data%", this.welcomeMessage));
-		$('#header').append(HTMLbioPic.replace("%data%", this.biopic));
-		$('#header').append(HTMLskillsStart);
+		$('#topContacts').prepend(HTMLemail.replace("%data%", this.contacts.email))
+		.prepend(HTMLmobile.replace("%data%", this.contacts.mobile))
+		.prepend(HTMLgithub.replace("%data%", this.contacts.github))
+		.prepend(HTMLtwitter.replace("%data%", this.contacts.twitter))
+		.prepend(HTMLlocation.replace("%data%", this.contacts.location));
+
+		$('#header').prepend(HTMLheaderRole.replace("%data%", this.role))
+		.prepend(HTMLheaderName.replace("%data%", this.name))
+		.append(HTMLwelcomeMsg.replace("%data%", this.welcomeMessage))
+		.append(HTMLbioPic.replace("%data%", this.biopic))
+		.append(HTMLskillsStart);
+
 		$.each(this.skills,function f(index,value){$('#skills').append(HTMLskills.replace("%data%", value));});
-		$('#footerContacts').append(HTMLemail.replace("%data%", this.contacts.email));
-		$('#footerContacts').append(HTMLmobile.replace("%data%", this.contacts.mobile));
-		$('#footerContacts').append(HTMLgithub.replace("%data%", this.contacts.github));
-		$('#footerContacts').append(HTMLtwitter.replace("%data%", this.contacts.twitter));
-		$('#footerContacts').append(HTMLlocation.replace("%data%", this.contacts.location));
+
+		$('#footerContacts').append(HTMLemail.replace("%data%", this.contacts.email))
+		.append(HTMLmobile.replace("%data%", this.contacts.mobile))
+		.append(HTMLgithub.replace("%data%", this.contacts.github))
+		.append(HTMLtwitter.replace("%data%", this.contacts.twitter))
+		.append(HTMLlocation.replace("%data%", this.contacts.location));
 	}
 };
 
@@ -43,9 +46,10 @@ var projects = {
 	'display': function f(){
 		$.each(this.projects, function f(index,value){
 			var myhtml = $.parseHTML(HTMLprojectStart);
-			$(myhtml).append(HTMLprojectTitle.replace('%data%', value.title));
-			$(myhtml).append(HTMLprojectDates.replace('%data%', value.dates));
-			$(myhtml).append(HTMLprojectDescription.replace('%data%', value.description));
+			$(myhtml).append(HTMLprojectTitle.replace('%data%', value.title))
+			.append(HTMLprojectDates.replace('%data%', value.dates))
+			.append(HTMLprojectDescription.replace('%data%', value.description));
+
 			$.each(value.images, function f(ind,img){
 				$(myhtml).append(HTMLprojectImage.replace('%data%', img));
 			});
@@ -72,19 +76,19 @@ var education = {
 	'display': function f() {
 		$.each(this.schools, function f(index, value){
 			var myhtml = $.parseHTML(HTMLschoolStart);
-			$(myhtml).append(HTMLschoolName.replace('%data%', value.name) + HTMLschoolDegree.replace('%data%', value.degree));
-			$(myhtml).append(HTMLschoolDates.replace('%data%', value.dates));
-			$(myhtml).append(HTMLschoolLocation.replace('%data%', value.location));
-			$(myhtml).append(HTMLschoolMajor.replace('%data%', value.majors[0]));
+			$(myhtml).append(HTMLschoolName.replace('%data%', value.name) + HTMLschoolDegree.replace('%data%', value.degree))
+			.append(HTMLschoolDates.replace('%data%', value.dates))
+			.append(HTMLschoolLocation.replace('%data%', value.location))
+			.append(HTMLschoolMajor.replace('%data%', value.majors[0]));
 			$('#education').append(myhtml);
 		});
 		if(this.onlineCourses.length) {
 			$('#education').append(HTMLonlineClasses);
 			$.each(this.onlineCourses, function f(index, value){
 				var myhtml = $.parseHTML(HTMLschoolStart);
-				$(myhtml).append(HTMLonlineTitle.replace('%data%', value.title) + HTMLonlineSchool.replace('%data%', value.school));
-				$(myhtml).append(HTMLonlineDates.replace('%data%', value.date));
-				$(myhtml).append(HTMLonlineURL.replace('%data%', value.url));
+				$(myhtml).append(HTMLonlineTitle.replace('%data%', value.title) + HTMLonlineSchool.replace('%data%', value.school))
+				.append(HTMLonlineDates.replace('%data%', value.date))
+				.append(HTMLonlineURL.replace('%data%', value.url));
 				$('#education').append(myhtml);
 			});
 		}
@@ -102,10 +106,10 @@ var work = {
 	'display': function f(){
 		$.each(this.jobs, function f(index,value){
 			var myhtml = $.parseHTML(HTMLworkStart);
-			$(myhtml).append(HTMLworkEmployer.replace('%data%', value.employer) + HTMLworkTitle.replace('%data%', value.title));
-			$(myhtml).append(HTMLworkDates.replace('%data%', value.dates));
-			$(myhtml).append(HTMLworkLocation.replace('%data%', value.location));
-			$(myhtml).append(HTMLworkDescription.replace('%data%', value.description));
+			$(myhtml).append(HTMLworkEmployer.replace('%data%', value.employer) + HTMLworkTitle.replace('%data%', value.title))
+			.append(HTMLworkDates.replace('%data%', value.dates))
+			.append(HTMLworkLocation.replace('%data%', value.location))
+			.append(HTMLworkDescription.replace('%data%', value.description));
 			$('#workExperience').append(myhtml);
 		});
 	}
