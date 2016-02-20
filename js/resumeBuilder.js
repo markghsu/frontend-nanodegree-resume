@@ -31,7 +31,7 @@ var bio = {
 		$('#footerContacts').append(HTMLtwitter.replace("%data%", this.contacts.twitter));
 		$('#footerContacts').append(HTMLlocation.replace("%data%", this.contacts.location));
 	}
-}
+};
 
 var projects = {
 	'projects': [{
@@ -52,7 +52,7 @@ var projects = {
 			$('#projects').append(myhtml);
 		});
 	}
-}
+};
 
 var education = {
 	'schools': [{
@@ -89,7 +89,7 @@ var education = {
 			});
 		}
 	}
-}
+};
 
 var work = {
 	'jobs': [{
